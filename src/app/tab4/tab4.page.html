@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Riwayat Pengembalian</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding content-safe-area">
+  <ion-list *ngIf="pengembalians.length > 0; else kosong">
+    <ion-item *ngFor="let p of pengembalians">
+      <ion-label>
+        <h2>{{ p.nama }} - {{ p.judul_buku }}</h2>
+        <p>NIM: {{ p.nim }} | Prodi: {{ p.prodi }}</p>
+        <p>NoHP: {{ p.nohp }} | Email: {{ p.email }}</p>
+        <p>Tanggal Kembali: {{ p.tanggal_kembali | date:'medium' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #kosong>
+    <ion-text color="medium" class="ion-padding">Belum ada data pengembalian.</ion-text>
+  </ng-template>
+</ion-content>

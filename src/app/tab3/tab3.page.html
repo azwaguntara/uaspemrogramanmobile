@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Form Peminjaman</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding content-safe-area">
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Nama</ion-label>
+      <ion-input [(ngModel)]="form.nama" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">NIM</ion-label>
+      <ion-input [(ngModel)]="form.nim" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Prodi</ion-label>
+      <ion-select [(ngModel)]="form.prodi" class="popover-content" placeholder="Pilih Prodi">
+        <ion-select-option value="Teknik Informatika (S1)">Teknik Informatika (S1)</ion-select-option>
+        <ion-select-option value="Sistem Informasi (S1)">Sistem Informasi (S1)</ion-select-option>
+        <ion-select-option value="Rekayasa Perangkat Lunak (S1)">Rekayasa Perangkat Lunak (S1)</ion-select-option>
+        <ion-select-option value="Teknologi Informasi (S1)">Teknologi Informasi (S1)</ion-select-option>
+        <ion-select-option value="Teknik Elektro (S1)">Teknik Elektro (S1)</ion-select-option>
+        <ion-select-option value="Teknik Industri (S1)">Teknik Industri (S1)</ion-select-option>
+        <ion-select-option value="Akuntansi (D3)">Akuntansi (D3)</ion-select-option>
+        <ion-select-option value="Manajemen Informatika (D3)">Manajemen Informatika (D3)</ion-select-option>
+        <ion-select-option value="Teknik Informatika (D3)">Teknik Informatika (D3)</ion-select-option>
+        <ion-select-option value="Bahasa Inggris (D3)">Bahasa Inggris (D3)</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Semester</ion-label>
+      <ion-input [(ngModel)]="form.semester" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nomor HP/WA</ion-label>
+      <ion-input [(ngModel)]="form.nohp" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="form.email" required></ion-input>
+    </ion-item>
+    <ion-item>
+  <ion-label>Pilih Buku</ion-label>
+  <ion-select placeholder="Buku Yang Tersedia" [(ngModel)]="id_buku" (ionChange)="onBukuSelected($event)">
+    <ion-select-option *ngFor="let buku of daftarBuku" [value]="buku.id">
+      {{ buku.judul }}
+    </ion-select-option>
+  </ion-select>
+</ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Perkiraan Pengembalian</ion-label>
+      <ion-datetime display-format="YYYY-MM-DD" [(ngModel)]="form.pengembalian"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="submit()">Pinjam Buku</ion-button>
+</ion-content>

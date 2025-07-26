@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+   <ion-title>Konfirmasi Pengembalian</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding content-safe-area">
+  <ion-list *ngIf="peminjaman.length > 0; else kosong">
+    <ion-item *ngFor="let item of peminjaman">
+      <ion-label>
+        <h2>{{ item.judul_buku }}</h2>
+        <p>{{ item.nama }} | {{ item.nim }}</p>
+        <p>{{ item.nohp }} | {{ item.email }}</p>
+        <p>Deadline: {{ item.pengembalian }}</p>
+      </ion-label>
+      <ion-button slot="end" color="success" (click)="kembalikan(item)">
+        Kembalikan
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #kosong>
+    <ion-text color="medium">
+      <p class="ion-padding">Tidak ada buku yang sedang dipinjam.</p>
+    </ion-text>
+  </ng-template>
+</ion-content>

@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding content-safe-area">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Selamat Datang di Aplikasi Peminjaman Buku Perpustakaan ITBI</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Aplikasi ini digunakan untuk memudahkan proses peminjaman buku
+      secara digital. Di dalam aplikasi ini terdapat halaman Tambah Buku yang hanya boleh diisi oleh admin
+      Perpustakaan.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card button color="primary" (click)="goTo('/tabs/tab2')" class="ion-text-center">
+          <ion-card-content>
+            <ion-icon name="book" style="font-size: 32px;"></ion-icon>
+            <p>Lihat Buku Tersedia</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-card button color="primary" (click)="goTo('/tabs/tab1')" class="ion-text-center">
+          <ion-card-content>
+            <ion-icon name="add-circle" style="font-size: 32px;"></ion-icon>
+            <p>Tambah Buku Baru</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-card button color="primary" (click)="goTo('/tabs/tab4')" class="ion-text-center">
+          <ion-card-content>
+            <ion-icon name="time" style="font-size: 32px;"></ion-icon>
+            <p>Lihat Riwayat Pengembalian</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+

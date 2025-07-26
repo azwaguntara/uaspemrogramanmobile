@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Daftar Buku</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding content-safe-area">
+  <ion-list *ngIf="daftarBuku.length > 0; else kosong">
+    <ion-item *ngFor="let buku of daftarBuku">
+      <ion-label>
+        <h2>{{ buku.judul }}</h2>
+        <p>Penulis: {{ buku.penulis }}</p>
+        <p>Stok: {{ buku.stok }}</p>
+        <p>Penerbit: {{ buku.penerbit}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #kosong>
+    <ion-text color="medium">
+      <p class="ion-padding">Belum ada data buku.</p>
+    </ion-text>
+  </ng-template>
+</ion-content>

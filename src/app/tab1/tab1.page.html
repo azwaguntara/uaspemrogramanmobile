@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+  <ion-title>Input Buku</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding content-safe-area">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Masukkan Data Buku</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Form Input Data Buku ini hanya boleh diisi oleh admin perpustakaan atau petugas perpustakaan.
+      Silahkan input data buku pada field yang tersedia :
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <ion-label position="floating">Judul Buku</ion-label>
+    <ion-input [(ngModel)]="judul"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Penulis</ion-label>
+    <ion-input [(ngModel)]="penulis"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Stok</ion-label>
+    <ion-input type="number" [(ngModel)]="stok"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Penerbit</ion-label>
+    <ion-input [(ngModel)]="penerbit"></ion-input>
+  </ion-item>
+  
+  <ion-button expand="full" (click)="simpanBuku()">Simpan Buku</ion-button>
+</ion-content>
